@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    <p>Hello <span th:text="${model.username}">username</span> and welcome to the application.</p>
+    <br/>
+<!--    <a th:href="@{/profile?id=} + ${model.id}" href="profile.html?id=userId">click to view profile</a>-->
+    <a th:href="@{/profile(id=${model.id}, value=test)}" href="profile.html?id=userId">click to view profile</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css"/>
+    <title>profile</title>
+</head>
+<li>
+    <h1>User Profile</h1>
+    <table>
+        <tr>
+            <td class="title">Full Name</td>
+<!--            <td th:text="${model.get('title') + ' ' +model.get('firstName')+' '+ model.get('surName')}">Full Name</td>-->
+<!--            <td th:text="${model.title + ' ' + model.firstName +' '+ model.surName}">Full Name</td>-->
+            <td th:text="| You are ${model.title} ${model.firstName} ${model.surName}, and you are most welcome.|">Full Name</td>
+        </tr>
+        <tr>
+            <td class="title">Date Of Birth</td>
+            <td th:text="${#dates.format(model.dateOfBirth, 'dd-MM-yyyy')}">dd-mm-YYYY</td>
+        </tr>
+        <tr>
+            <td class="title">Description</td>
+            <td th:utext="${model.description}">Description</td>
+        </tr>
+    </table>
+    <br/>
+    <h2>Languages</h2>
+    <ul>
+        <li th:each="language : ${model.languages}" th:text="${language}">default language</li>
+    </ul>
+    <br/> <!--we can use gt lt or ge le for equalto -->
+    <p th:if="${model.languages.size() ge 3}">
+        You code using <span th:each="language : ${model.languages}" th:text="${language} + ', '">language1</span>
+    </p>
+    <br/>
+    <p>
+        You speak <span th:text="${model.languages.size() ge 3} ? '3 or more' : '${model.languages.size()}'"> x </span> languages.
+    </p>
+    <br/>
+    <p>
+        <a th:href="@{/}"  href="home.html">Click here to go back to homepage</a>
+    </p>
+</body>
+</html>
