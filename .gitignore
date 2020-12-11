@@ -16,3 +16,7 @@ buildNumber.properties
 02LoopsConditionsLinks/mvnw.cmd
 02LoopsConditionsLinks/mvnw
 02LoopsConditionsLinks/.mvn/
+03buildingpages/mvnw.cmd
+03buildingpages/mvnw
+03buildingpages/.mvn/wrapper/maven-wrapper.jar
+03buildingpages/.mvn/
