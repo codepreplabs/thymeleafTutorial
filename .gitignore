@@ -20,3 +20,6 @@ buildNumber.properties
 03buildingpages/mvnw
 03buildingpages/.mvn/wrapper/maven-wrapper.jar
 03buildingpages/.mvn/
+04forms/mvnw.cmd
+04forms/mvnw
+04forms/.mvn/
